@@ -21,20 +21,15 @@ Pud = 319;
 
 %u1 = 0;
 %u2 = 80;
-for i = 1:n
-    %for j = 1:d
 g = g0 .* (R0./(R0 + x(3))) .^ 2;
 R = R0 + x(3);
-W = g1.*(P0+u2(i,:)) ./ x(5);
+W = g1.*(P0+u2) ./ x(5);
 
-dxdt(1) = W.*cos(u1(i,:) - x(2)) - g.*cos(x(2));
-dxdt(2) = (1./x(1)).*(W.*sin(u1(i,:)-x(2)) + g.*sin(x(2)));
+dxdt(1) = W.*cos(u1 - x(2)) - g.*cos(x(2));
+dxdt(2) = (1./x(1)).*(W.*sin(u1-x(2)) + g.*sin(x(2)));
 dxdt(3) = x(1) .* cos(x(2));
 dxdt(4) = (x(1) .* sin(x(2))) ./ R;
-dxdt(5) = -(P0 + u2(i,:)) ./ Pud;
+dxdt(5) = -(P0 + u2) ./ Pud;
 %dxdt = [dx1; dx2; dx3; dx4; dx5];
-    %end
-end
-
-end
+    end
 end
