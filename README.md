@@ -1,5 +1,5 @@
 # statekkosmiczny
-Code snippets from my Bachelor thesis done on MATLAB.
+Code snippets from my project from my Bachelor studies done on MATLAB.
 
 The task was to calculate the parameters for the optimal control of a spacecraft's landing on the Moon using evolutionary optimisation algorithms.
 A system of five differential equations was given, utilising which the whole calculation approach was based.
